@@ -2,50 +2,109 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
         <title>PRCLSS - Homepage</title>
+        <meta
+            name="description"
+            content="PRCLSS: music, writing, cultural history, and vintage finds."
+        >
+
         <link rel="stylesheet" href="./styles.css">
-        <script src="./script.js"></script>
+        <script src="./script.js" defer></script>
     </head>
 
     <body>
-        <nav>
-            <div id="image"></div>
-            <ul>
-                <li><a>Home</a></li>
-                <li><a>Times</a></li>
-                <li><a>Jams</a></li>
-                <li><a>Finds</a></li>
-            </ul>
+        <header>
+            <nav class="navbar" aria-label="Main navigation">
+                <a class="logo">PRCLSS</a>
+                
+                <ul class="nav-links">
+                    <li><a>Home</a></li>
+                    <li><a>Times</a></li>
+                    <li><a>Jams</a></li>
+                    <li><a>Finds</a></li>
+                </ul>
 
-            <div class="search">
-                Search:
-                <label for="search"></label>
-                <input id="search" type="text">
-                <button>Go</button>
+                <form class="search" role="search" action="./search/html">
+                    <label for="search">Search</label>
+                    <input
+                        id="search"
+                        name="q"
+                        type="search"
+                        placeholder="Search the archive..."
+                    >
+                    <button type="submit">Go</button>
+                </form>
+            </nav>
+        </header>
 
-                <p></p>
-            </div>
-        </nav>
+        <main id="home">
+            <section id="times" class="hero times-hero">
+                <p class="eyebrow">01 / Read</p>
+                <h1>PRCLSS Times</h1>
+                <p class="tagline">
+                    History is never just the past.
+                </p>
+                <p>
+                    Writing, interviews, and perspectives on the
+                    people, sounds, and movements that shape culture.
+                </p>
+                <a href="./times.html">Explore the Times &rarr;</a>
+            </section>
 
-        <div id="times-hero">
-            <h2>PRCLSS Times</h2>
-                <h3><em>[Quote telling the importance of history]</em></h3>
-            <p></p>
-        </div>
+            <section id="jams" class="hero jams-hero">
+                <p class="eyebrow">02 / Listen</p>
+                <h2>Jams</h2>
+                <p>This month's selections.</p>
 
-        <div id="jams-hero">
-            <h3>[This Month's] Top 10</h3>
-            <audio src="." controls autoplay></audio>
-            <img id="image" class="music-artist">
-            <!--Want this to be a carousel adjacent to player.
-            Photos will link to artists' page-->
-        </div>
+                <div class="music-feature">
+                    <div class="music-player">
+                        <h3>Featured Track</h3>
+                        <audio controls preload="metadata">
+                            <source src="./audio/featured-track.mp3"
+                                    type="audio/mpeg">
+                            Your browser does not support audio playback.
+                        </audio>
+                    </div>
 
-        <div id="finds-hero">
-            <!--Vintage finds side by side, or banner style img with month's finds or semi-annual.
-            img click will link to depop shop (for now)-->
-        </div>
+                    <div class="artist-feature">
+                        <img
+                            class="artist-image"
+                            src="./images/artist-placeholder.jpg"
+                            alt="Featured artist"
+                        >
+                        <h3>Artist Name</h3>
+                        <a href="./jams.html">Explore the selections &rarr;</a>
+                    </div>
+                </div>
+                <!--Want this to be a carousel adjacent to player.
+                Photos will link to artists' page-->
+            </section>
 
-        <footer></footer>
+            <section id="finds" class="hero finds-hero">
+                <p class="eyebrow">03 / Discover</p>
+                <h2>Finds</h2>
+                <p>
+                    Vintage pieces, archival discoveries, and objects
+                    worth knowing about.
+                </p>
+
+                <div class="finds-feature">
+                    <img
+                        class="find-image"
+                        src="./images/vintage-find-placeholder.jpg"
+                        alt="Featured vintage discovery"
+                    >
+                    <a href="./finds.html">Browse the finds &rarr;</a>
+                </div>
+                <!--Vintage finds side by side, or banner style img with month's finds or semi-annual.
+                img click will link to depop shop (for now)-->
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 PRCLSS. Independent by design.</p>
+        </footer>
     </body>
 </html>

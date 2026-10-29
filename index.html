@@ -16,18 +16,18 @@
 
     <body>
         <header>
+            <a href="./index.html" class="logo">PRCLSS</a>
+
             <nav class="navbar" aria-label="Main navigation">
-                <a class="logo">PRCLSS</a>
-                
                 <ul class="nav-links">
-                    <li><a>Home</a></li>
-                    <li><a>Times</a></li>
-                    <li><a>Jams</a></li>
-                    <li><a>Finds</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./times/index.html">Times</a></li>
+                    <li><a href="./jams/index.html">Jams</a></li>
+                    <li><a href="./finds/index.html">Finds</a></li>
                 </ul>
 
                 <form class="search" role="search" action="./search/html">
-                    <label for="search">Search</label>
+                    <label for="search"></label>
                     <input
                         id="search"
                         name="q"
@@ -40,9 +40,13 @@
         </header>
 
         <main id="home">
+            <section id="intro" class="hero">
+                <h1>PRCLSS</h1>
+            </section>
+
             <section id="times" class="hero times-hero">
                 <p class="eyebrow">01 / Read</p>
-                <h1>PRCLSS Times</h1>
+                <h2>Times</h2>
                 <p class="tagline">
                     History is never just the past.
                 </p>
@@ -60,12 +64,32 @@
 
                 <div class="music-feature">
                     <div class="music-player">
-                        <h3>Featured Track</h3>
-                        <audio controls preload="metadata">
-                            <source src="./audio/featured-track.mp3"
-                                    type="audio/mpeg">
+                        <h3>This Month's Top 10</h3>
+
+                        <div class="current-track">
+                            <img
+                                id="track-artwork"
+                                src="./images/default-artwork.jpg"
+                                alt="Current track artwork"
+                            >
+
+                            <div class="track-info">
+                                <p id="track-title">Select a track</p>
+                                <p id="track-artist"></p>
+                            </div>
+                        </div>
+
+                        <audio id="audio-player" preload="metadata">
                             Your browser does not support audio playback.
                         </audio>
+
+                        <div class="player-controls">
+                            <button id="previous-track" type="button">Previous</button>
+                            <button id="play-pause" type="button">Play</button>
+                            <button id="next-track" type="button">Next</button>
+                        </div>
+
+                        <ol id="monthly-playlist" class="playlist"></ol>
                     </div>
 
                     <div class="artist-feature">
@@ -92,7 +116,7 @@
 
                 <div class="finds-feature">
                     <img
-                        class="find-image"
+                        class="finds-image"
                         src="./images/vintage-find-placeholder.jpg"
                         alt="Featured vintage discovery"
                     >

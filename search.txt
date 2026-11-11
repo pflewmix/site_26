@@ -1,0 +1,10 @@
+<form class="search" role="search" action="./search/html">
+                    <label for="search"></label>
+                    <input
+                        id="search"
+                        name="q"
+                        type="search"
+                        placeholder="Search the archive..."
+                    >
+                    <button type="submit">Go</button>
+                </form>

@@ -19,23 +19,89 @@
             <a href="./index.html" class="logo">PRCLSS</a>
 
             <nav class="navbar" aria-label="Main navigation">
-                <ul class="nav-links">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./times/index.html">Times</a></li>
-                    <li><a href="./jams/index.html">Jams</a></li>
-                    <li><a href="./finds/index.html">Finds</a></li>
-                </ul>
+                <a href="./index.html">Home</a>
+                <a href="./times/index.html">Times</a>
+                <a href="./jams/index.html">Jams</a>
+                <a href="./finds/index.html">Finds</a>
+                
+                <!-- Desktop: opens the contact form -->
+                <button
+                    type="button"
+                    id="open-contact"
+                    class="contact-trigger contact-desktop"
+                >
+                    Contact
+                </button>
 
-                <form class="search" role="search" action="./search/html">
-                    <label for="search"></label>
-                    <input
-                        id="search"
-                        name="q"
-                        type="search"
-                        placeholder="Search the archive..."
+                <!-- Mobile/tablet: opens the visitor's email app -->
+                <a
+                    href="mailto:youraddress@gmail.com"
+                    class="contact-trigger contact-mobile"
+                    aria-label="Email PRCLSS"
+                    title="Email PRCLSS"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
                     >
-                    <button type="submit">Go</button>
-                </form>
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <path d="m3 7 9 6 9-6" />
+                    </svg>
+                </a>
+
+                <!-- Contact form popup -->
+                <div id="contact-modal" class="contact-modal" aria-hidden="true">
+                    <div
+                        class="contact-modal-content"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="contact-title"
+                    >
+                        <button
+                            type="button"
+                            id="close-contact"
+                            class="close-contact"
+                            aria-label="Close contact form"
+                        >&times;</button>
+
+                        <h2 id="contact-title">Get in Touch</h2>
+                        <p>Questions, collaborations, submissions, or just saying hello.</p>
+
+                        <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+                            <label for="modal-name">Name</label>
+                            <input id="modal-name" name="name" type="text" required>
+
+                            <label for="modal-email">Email</label>
+                            <input id="modal-email" name="email" type="email" required>
+
+                            <label for="modal-subject">Subject</label>
+                            <select id="modal-subject" name="subject">
+                                <option>General inquiry</option>
+                                <option>Writing or collaboration</option>
+                                <option>Music submission</option>
+                                <option>Finds inquiry</option>
+                            </select>
+
+                            <label for="modal-message">Message</label>
+                            <textarea
+                                id="modal-message"
+                                name="message"
+                                rows="5"
+                                required
+                            ></textarea>
+
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
             </nav>
         </header>
 
@@ -45,21 +111,27 @@
             </section>
 
             <section id="times" class="hero times-hero">
-                <p class="eyebrow">01 / Read</p>
-                <h2>Times</h2>
+                <div class="eye-titles">
+                    <p class="eyebrow">01 / Read</p>
+                    <h2>Times</h2>
+                </div>
                 <p class="tagline">
                     History is never just the past.
                 </p>
-                <p>
-                    Writing, interviews, and perspectives on the
-                    people, sounds, and movements that shape culture.
+                <p class="times-summary">
+                    Writing on the people,
+                    sounds, <br>and movements that shape culture.
                 </p>
-                <a href="./times.html">Explore the Times &rarr;</a>
+                <button class="explore-btn">
+                    <a href="./times.html">Explore The Times</a>
+                </button>
             </section>
 
             <section id="jams" class="hero jams-hero">
-                <p class="eyebrow">02 / Listen</p>
-                <h2>Jams</h2>
+                <div class="eye-titles">
+                    <p class="eyebrow">02 / Listen</p>
+                    <h2>Jams</h2>
+                </div>
                 <p>This month's selections.</p>
 
                 <div class="music-feature">
@@ -98,8 +170,10 @@
                             src="./images/artist-placeholder.jpg"
                             alt="Featured artist"
                         >
-                        <h3>Artist Name</h3>
-                        <a href="./jams.html">Explore the selections &rarr;</a>
+                        <h3 class="artist-name">Artist Name</h3>
+                        <button class="explore-btn">
+                            <a href="./jams.html">Playlist Download</a>
+                        </button>
                     </div>
                 </div>
                 <!--Want this to be a carousel adjacent to player.
@@ -107,20 +181,24 @@
             </section>
 
             <section id="finds" class="hero finds-hero">
-                <p class="eyebrow">03 / Discover</p>
-                <h2>Finds</h2>
+                <div class="eye-titles">
+                    <p class="eyebrow">03 / Discover</p>
+                    <h2>Finds</h2>
+                </div>
                 <p>
                     Vintage pieces, archival discoveries, and objects
                     worth knowing about.
                 </p>
 
                 <div class="finds-feature">
-                    <img
+                    <!-- <img
                         class="finds-image"
                         src="./images/vintage-find-placeholder.jpg"
                         alt="Featured vintage discovery"
-                    >
-                    <a href="./finds.html">Browse the finds &rarr;</a>
+                    > -->
+                    <button class="explore-btn">
+                        <a href="./finds.html">The Shop &rarr;</a>
+                    </button>
                 </div>
                 <!--Vintage finds side by side, or banner style img with month's finds or semi-annual.
                 img click will link to depop shop (for now)-->
